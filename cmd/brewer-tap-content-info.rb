@@ -6,7 +6,7 @@ require "json"
 module Homebrew
   module_function
 
-  def bx_tap_content_info_args
+  def brewer_tap_content_info_args
     Homebrew::CLI::Parser.new do
       description <<~EOS
         Do something. Place a description here.
@@ -25,8 +25,8 @@ module Homebrew
     end
   end
 
-  def bx_tap_content_info
-    args = bx_tap_content_info_args.parse
+  def brewer_tap_content_info
+    args = brewer_tap_content_info_args.parse
     
     formulae = []
     casks = []
