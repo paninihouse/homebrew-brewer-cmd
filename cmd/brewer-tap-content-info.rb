@@ -32,6 +32,8 @@ module Homebrew
     casks = []
     
     Tap.each do |tap|
+      next if ["homebrew/core", "homebrew/cask"].include?(tap.name)
+      
       unless args.cask?
         tap.formula_files.each do |formula_file|
           formulae << Formulary.factory(formula_file)
