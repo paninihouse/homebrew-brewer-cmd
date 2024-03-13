@@ -42,7 +42,7 @@ module Homebrew
       
       unless args.formula?
         tap.cask_files.each do |cask_file|
-          casks << Cask::CaskLoader::FromTapPathLoader.new(cask_file).load(config: nil)
+          casks << Cask::CaskLoader::FromPathLoader.new(cask_file).load(config: nil)
         end
       end
     end
